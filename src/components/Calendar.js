@@ -143,90 +143,22 @@ function Calendar({ date }) {
 					{renderDates.map((date, idx) => {
 						return (
 							<tr key={idx}>
-								<td
-									className={
-										date[0].otherDay
-											? 'ui-datepicker-other-month'
-											: date[0].currDay
-											? 'ui-datepicker-today'
-											: null
-									}
-									key={date[0].day}
-								>
-									{date[0].day}
-								</td>
-								<td
-									className={
-										date[1].otherDay
-											? 'ui-datepicker-other-month'
-											: date[1].currDay
-											? 'ui-datepicker-today'
-											: null
-									}
-									key={date[1].day}
-								>
-									{date[1].day}
-								</td>
-								<td
-									className={
-										date[2].otherDay
-											? 'ui-datepicker-other-month'
-											: date[2].currDay
-											? 'ui-datepicker-today'
-											: null
-									}
-									key={date[2].day}
-								>
-									{date[2].day}
-								</td>
-								<td
-									className={
-										date[3].otherDay
-											? 'ui-datepicker-other-month'
-											: date[3].currDay
-											? 'ui-datepicker-today'
-											: null
-									}
-									key={date[3].day}
-								>
-									{date[3].day}
-								</td>
-								<td
-									className={
-										date[4].otherDay
-											? 'ui-datepicker-other-month'
-											: date[4].currDay
-											? 'ui-datepicker-today'
-											: null
-									}
-									key={date[4].day}
-								>
-									{date[4].day}
-								</td>
-								<td
-									className={
-										date[5].otherDay
-											? 'ui-datepicker-other-month'
-											: date[5].currDay
-											? 'ui-datepicker-today'
-											: null
-									}
-									key={date[5].day}
-								>
-									{date[5].day}
-								</td>
-								<td
-									className={
-										date[6].otherDay
-											? 'ui-datepicker-other-month'
-											: date[6].currDay
-											? 'ui-datepicker-today'
-											: null
-									}
-									key={date[6].day}
-								>
-									{date[6].day}
-								</td>
+								{date.map(data => {
+									return (
+										<td
+											className={
+												data.otherDay
+													? 'ui-datepicker-other-month'
+													: data.currDay
+													? 'ui-datepicker-today'
+													: null
+											}
+											key={data.day}
+										>
+											{data.day}
+										</td>
+									);
+								})}
 							</tr>
 						);
 					})}
